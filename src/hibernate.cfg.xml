@@ -7,9 +7,9 @@
 
 		<!-- Configure connection information of database -->
 		<property name="connection.username">root</property>
-		<property name="connection.password">1230</property>
+		<property name="connection.password">12345</property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql:///hibernate5</property>
+		<property name="connection.url">jdbc:mysql://JavaTest/hibernate5</property>
 
 		<!-- Configure base information of hibernate -->
 		<!-- The database dialect hibernate will use -->

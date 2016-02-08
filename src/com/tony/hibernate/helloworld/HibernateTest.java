@@ -1,7 +1,11 @@
 package com.tony.hibernate.helloworld;
 
 
+import java.sql.Date;
+
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
@@ -25,27 +29,34 @@ public class HibernateTest {
 		//2) Create ServiceRegistry Object: Hibernate 4.x new add object
 		//hibernate's every configuration and servers all need to be registered then be working
 		
-		ServiceRegistry serviceRegistry = null;
+		ServiceRegistry serviceRegistry = 
+				new StandardServiceRegistryBuilder()
+				.applySettings(configuration.getProperties()).build();
+		
+		//3)
+		sessionFactory = configuration.buildSessionFactory(serviceRegistry); 
+		
 		
 		//2. Create a Session Object
-		
+		Session session = sessionFactory.openSession();
 
 		
 		//3. Start case
-		
+		Transaction transaction = session.beginTransaction();
 		
 		//4. Save Operation
-		
-		
+		Date d1 = new Date(new java.util.Date().getTime());
+		News news = new News("Java", "Tony", d1);
+		session.save(news);
 		//5. Submit case
-		
+		transaction.commit();
 		
 		
 		//6. Close Session
-		
+		session.close();
 		
 		//7. Close SessionFactory object
-	
+		sessionFactory.close();
 	}
 
 }

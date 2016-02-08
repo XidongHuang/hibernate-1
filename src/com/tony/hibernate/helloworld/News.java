@@ -41,7 +41,7 @@ public class News {
 		this.date = date;
 	}
 
-	public News(Integer id, String title, String author, Date date) {
+	public News(String title, String author, Date date) {
 		super();
 
 		this.title = title;
