@@ -9,11 +9,11 @@
 		<property name="connection.username">root</property>
 		<property name="connection.password">12345</property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://JavaTest/hibernate5</property>
+		<property name="connection.url">jdbc:mysql:///JavaTest</property>
 
 		<!-- Configure base information of hibernate -->
 		<!-- The database dialect hibernate will use -->
-		<property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
 		
 		
 		<!-- Print SQL in console when it is operating -->
