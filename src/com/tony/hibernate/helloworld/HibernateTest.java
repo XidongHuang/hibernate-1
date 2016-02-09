@@ -50,10 +50,13 @@ public class HibernateTest {
 		Transaction transaction = session.beginTransaction();
 		
 		//4. Save Operation
-		Date d1 = new Date(new java.util.Date().getTime());
-		News news = new News("Java", "Tony", d1);
-		System.out.println(news);
-		session.save(news);
+//		Date d1 = new Date(new java.util.Date().getTime());
+//		News news = new News("Java", "Tony", d1);
+//		System.out.println(news);
+//		session.save(news);
+		
+		News n1 = session.get(News.class, 1);
+		System.out.println(n1);
 		//5. Submit case
 		transaction.commit();
 		
